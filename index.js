@@ -31,23 +31,9 @@ function displayImage(json){
     
     firstUl.setAttribute("data-slides", true)
     firstLi.setAttribute("data-active", true)
+}
 
-    const buttonDiv = document.getElementById('button')
-
-const prevBttn = document.createElement('button')
-const nextBttn = document.createElement('button')
-
-prevBttn.textContent = "PREV"
-nextBttn.textContent = "NEXT"
-
-buttonDiv.appendChild(prevBttn)
-buttonDiv.appendChild(nextBttn)
-
-prevBttn.setAttribute("class","carousel-button prev")
-nextBttn.setAttribute("class","carousel-button next")
-prevBttn.setAttribute("data-carousel-button","prev")
-nextBttn.setAttribute("data-carousel-button","next")
-
+//button
 
 const buttons = document.querySelectorAll("[data-carousel-button]")
 console.log(buttons)
@@ -57,18 +43,13 @@ buttons.forEach(button => {
         const offSet = button.dataset.carouselButton === "next" ? 1 : -1
         
         const slides = button.closest("[data-carousel]").querySelector("[data-slides]")
-        console.log(slides)
         
-        const activeSlides = slides.querySelector("[data-active]")
-        let newIndex = [...slides.children].indexOf(activeSlides) + offSet
+        const activeSlide = slides.querySelector("[data-active]")
+        let newIndex = [...slides.children].indexOf(activeSlide) + offSet
         if (newIndex < 0) newIndex = slides.children.length - 1
         if (newIndex >= slides.children.length) newIndex = 0
 
         slides.children[newIndex].dataset.active = true
-        delete activeSlides.dataset.active
+        delete activeSlide.dataset.active
     })
 })
-}
-
-//button
-
