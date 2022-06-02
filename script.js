@@ -57,40 +57,8 @@ function image(json){
     // }
 }
 
-// document.addEventListener('DOMContentLoaded',()=> {
-//     const carouselSlide = document.querySelector('.carousel-container');
-//     const carouselImages = document.querySelectorAll('.carousel-slide img');
-//     console.log(carouselImages)
-// })
-//create buttons and transitions
-// const carouselSlide = document.querySelector('.carousel-container');
-// const carouselImages = document.querySelectorAll('.carousel-slide img');
-// console.log(carouselImages)
-
-// //Buttons
-// const prevBtn = document.querySelector('#prevBtn');
-// const nextBtn = document.querySelector('#nextBtn');
-
-// //Counter
-
-// let counter = 1;
-// const size = carouselImages[0].clientWidth;
-
-// carouselSlide.style.transform= 'translateX(' +(-size * counter) + 'px)';
-
-
-// //Button Listeners
-
-// nextBtn.addEventListener('click', () => {
-//     if (counter >= carouselImages.length-1) return;
-//     carouselSlide.style.transition = "transform 0.4s ease-in-out";
-//     counter++;
-//     carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-// })
-
-// prevBtn.addEventListener('click', () => {
-//     if (counter <= 0) return;
-//     carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-//     counter--;
-//     carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-// })
+const upvoteButton = document.getElementById('upvoteButton')
+let upvoteNumber = document.getElementById('upvoteNumber')
+upvoteButton.addEventListener('click', () => {
+    upvoteNumber.textContent = (parseInt(upvoteNumber.textContent) + 1)
+})
