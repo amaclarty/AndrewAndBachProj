@@ -62,3 +62,9 @@ let upvoteNumber = document.getElementById('upvoteNumber')
 upvoteButton.addEventListener('click', () => {
     upvoteNumber.textContent = (parseInt(upvoteNumber.textContent) + 1)
 })
+
+const downvoteButton = document.getElementById('downvoteButton')
+downvoteButton.addEventListener('click', () => {
+    upvoteNumber.textContent = (parseInt(upvoteNumber.textContent) - 1)
+})
+
